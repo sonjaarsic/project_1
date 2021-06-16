@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
+# File:guessinggame.sh
 
 clear
 declare -i numFiles
-numFiles=$(find . -maxdepth 1 -not -type d | wc --lines)
+numOfFiles=$(find . -maxdepth 1 -not -type d | wc --lines)
 
 function makeValidGuess {
 	until read -p "Enter your guess:  " guess;
@@ -12,12 +13,12 @@ function makeValidGuess {
 }
 
 while makeValidGuess; do
-	if (( guess < numFiles )); then
-		echo "\nYour guess is to low."
+	if [[ $guess -lt $numberOfFiles ]]; then
+		echo "Your guess is to low. Type a new one."
 	elif (( guess > numFiles )); then
-		echo"\nYour guess is too high."
+		echo"Your guess is too high.Type a new one"
 	else
-		echo "\nCongratulations! Answer $numFiles is correct!"
+		echo "Congratulations! Answer $numOfFiles is correct!"
 		exit
 	fi
 done
