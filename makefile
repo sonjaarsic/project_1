@@ -1,6 +1,6 @@
 README.md: guessinggame.sh
 	touch README.md
-	echo -n "# Unix >>README.md
+	echo -n "# Unix >> README.md
 	echo -n "# Project_1: guessing game" >> README.md
   	echo -n "Date and time:  " >> README.md
 	date >> README.md
