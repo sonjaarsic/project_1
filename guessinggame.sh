@@ -2,7 +2,7 @@
 # File:guessinggame.sh
 
 clear
-declare -i numFiles
+declare -i numOfFiles
 numOfFiles=$(find . -maxdepth 1 -not -type d | wc --l)
 
 echo "Guess the number of files in current directory. "
@@ -15,9 +15,9 @@ function guessFun {
 }
 
 while guessFun; do
-	if [[ $guess -lt $numberOfFiles ]]; then
+	if [[ $guess -lt $numOfFiles ]]; then
 		echo "Your guess is to low. Type a new one."
-	elif (( guess > numFiles )); then
+	elif (( guess > numOfFiles )); then
 		echo"Your guess is too high.Type a new one"
 	else
 		echo "Congratulations! $numOfFiles is correct answer!"
