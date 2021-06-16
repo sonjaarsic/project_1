@@ -5,6 +5,8 @@ clear
 declare -i numFiles
 numOfFiles=$(find . -maxdepth 1 -not -type d | wc --lines)
 
+echo "Guess the number of files in current directory. "
+
 function guessFun {
 	until read -p "Enter your guess:  " guess;
 	[[ "$guess" =~ ^[0-9]+$ ]]; do
