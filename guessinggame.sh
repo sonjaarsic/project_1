@@ -3,7 +3,7 @@
 
 clear
 declare -i numFiles
-numOfFiles=$(find . -maxdepth 1 -not -type d | wc --lines)
+numOfFiles=$(find . -maxdepth 1 -not -type d | wc --l)
 
 echo "Guess the number of files in current directory. "
 
